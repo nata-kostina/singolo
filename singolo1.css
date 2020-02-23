@@ -1,0 +1,201 @@
+*, h1, h2, h3, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1020px;
+  margin: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/*===============================
+header
+=================================*/
+
+.header {
+  padding-top: 29px;
+  padding-bottom: 29.5px;
+
+  background-color: #2D303A;
+  border-bottom: 6px solid #323746; 
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  text-decoration: none;
+}
+
+.logo h1 {
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.046em;
+}
+
+.star {
+  color: #C9605C;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-self:flex-end;
+
+  padding-bottom: 3px;
+}
+
+.nav__link {
+  position: relative;
+  margin-left: 32px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.035em;
+
+  transition: color .2s linear;
+}
+
+.nav__link:after {
+  content:"";
+
+  position: absolute;
+  top: 6px;
+
+  width: 2px;
+  height: 2px;
+  margin-left: 16px;
+
+  background-color: #494E62;
+  border-radius: 50%;
+}
+
+.nav__link:last-child:after {
+  display: none;
+}
+
+a.nav__link:hover {
+  color: #C9605C;
+}
+
+/*===============================
+slider
+=================================*/
+
+.slider {
+  background-color: #F06C64;
+  border-bottom: 5px solid #EA676B;
+}
+
+.slider__inner {    
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-top: 53px;
+  padding-bottom: 59px;
+}
+
+.arrow {
+  cursor: pointer;
+  transition: transform .2s linear;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+}
+
+.slider__inner img {
+  display: block;
+}
+
+.iPhone__vert {
+  margin-right: 16px;
+}
+
+/*===============================
+services
+=================================*/
+
+.services {
+  background-color: #f2f2f2;
+  border-bottom: 6px solid #FFFFFF;
+}
+
+.services__inner {
+  padding-top: 60px;
+}
+
+.services__title {
+  margin-bottom: 17px;
+
+  font-size: 30px;
+  font-weight: 900;
+  color: #666D89;
+  letter-spacing: -0.01em;  
+}
+
+.services__text {
+  margin-bottom: 43px;
+
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 30px;
+  letter-spacing: 0.0084em;  
+  text-align: justify;
+  color: #767E9E;
+}
+
+.services__features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  padding-bottom: 39px;
+}
+
+.features__item {
+  position: relative;
+
+  width: 32%;
+  margin-bottom: 30px;
+  padding-left: 80px; 
+}
+
+.feature__icon {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+
+.feature__title {
+  margin-bottom: 9px;
+
+  font-size: 18px;
+  font-weight: 900;
+  color: #666D89;
+}
+
+.feature__text {
+  font-size: 12px;
+  text-align: justify;
+  line-height: 21px;
+  color: #767E9E;
+}
+

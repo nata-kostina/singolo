@@ -11,30 +11,48 @@
 </head>
 
 <body>
+
   <header class="header">
     <div class="container">
       <div class="header__inner">
         <a href="#" class="logo">
           <h1>Singolo<span class="star">*</span></h1>
         </a>
-        <nav class="menu">
-          <a href="#" class="menu__link">Home</a>
-          <a href="#" class="menu__link">Services</a>
-          <a href="#" class="menu__link">Portfolio</a>
-          <a href="#" class="menu__link">About</a>
-          <a href="#" class="menu__link">Contact</a>
+        <nav>
+          <ul class="menu">
+            <li class="menu__link link_active" data-scroll="home">Home</li>
+            <li class="menu__link" data-scroll="services">Services</li>
+            <li class="menu__link" data-scroll="portfolio">Portfolio</li>
+            <li class="menu__link" data-scroll="about">About</li>
+            <li class="menu__link" data-scroll="quote">Contact</li>
+          </ul>
         </nav>
       </div>
     </div>
   </header>
   <!-- /.header -->
   <main>
-    <section class="slider">
+    <section class="slider slider_red home">
       <div class="container">
         <div class="slider__inner">
           <img src="assets/img/slider/arrow_left.png" alt="arrow" class="arrow arrow_left">
-          <img src="assets/img/slider/iPhone_vert.png" alt="iPhone" class="iPhone__vert">
-          <img src="assets/img/slider/iPhone_horiz.png" alt="iPhone" class="iPhone__horiz">
+          <div class="slide active">
+            <div class="phone_1">
+              <img src="assets/img/slider/iPhone_vert.png" alt="iPhone" class="iPhone__vert">
+              <img src="assets/img/slider/screenBlack_vert.png" alt="iPhone" class="screen__vert">
+              <img src="assets/img/slider/base_vert.png" alt="iPhone" class="outlay__vert">
+            </div>
+            <div class="phone_2">
+              <img src="assets/img/slider/iPhone_horiz.png" alt="iPhone" class="iPhone__horiz">
+              <img src="assets/img/slider/screenBlack_horiz.png" alt="iPhone" class="screen__horiz">
+              <img src="assets/img/slider/base_horiz.png" alt="iPhone" class="outlay__horiz">
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/img/slider/phone_2.png" alt="iPhone" class="phone__left">
+            <img src="assets/img/slider/phone_1.png" alt="iPhone" class="phone__middle">
+            <img src="assets/img/slider/phone_2.png" alt="iPhone" class="phone__right">
+          </div>
           <img src="assets/img/slider/arrow_right.png" alt="arrow" class="arrow arrow_right">
         </div>
         <!-- /.slider__inner -->
@@ -103,36 +121,36 @@
             sem
             nec elit.</p>
           <div class="portfolio__tags">
-            <a href="#" class="tag">All</a>
-            <a href="#" class="tag">Web Design</a>
-            <a href="#" class="tag">Graphic Design</a>
-            <a href="#" class="tag">Artwork</a>
+            <div class="tag">All</div>
+            <div class="tag">Web Design</div>
+            <div class="tag">Graphic Design</div>
+            <div class="tag">Artwork</div>
           </div>
           <div class="portfolio__items">
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/1.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/2.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/3.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/4.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/5.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/6.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/7.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/8.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/9.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/10.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/11.jpg"
-                alt="portfolio__item"></a>
-            <a class="portfolio__item" href="#" target="_blank"><img src="assets/img/portfolio/12.jpg"
-                alt="portfolio__item"></a>
+            <div class="portfolio__item"><img src="assets/img/portfolio/1.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/2.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/3.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/4.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/5.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/6.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/7.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/8.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/9.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/10.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/11.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
+            <div class="portfolio__item"><img src="assets/img/portfolio/12.jpg" alt="portfolio__item"
+                class="portfolio__img"></div>
           </div>
           <!-- /.portfolio__items -->
         </div>
@@ -206,13 +224,13 @@
             commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
             commodo, tortor mauris condimentum nibh.</div>
           <div class="contact">
-            <form action="#" method="POST">
+            <form action="#" method="POST" class="form">
               <input type="text" name="username" placeholder="Name (Required)" required class="input__item"><br>
               <input type="email" name="email" placeholder="Email (Required)" required class="input__item"><br>
-              <input type="text" name="subject" placeholder="Subject" class="input__item"><br>
-              <textarea name="comment" id="" style="resize: none;" placeholder="Describe your project in detail..."
-                required class="input__item textarea"></textarea><br>
-              <input type="submit" name="submit" value="Submit" class="button">
+              <input id="subject" type="text" name="subject" placeholder="Subject" class="input__item"><br>
+              <textarea id="description" name="comment" style="resize: none;"
+                placeholder="Describe your project in detail..." class="input__item textarea"></textarea><br>
+              <input type="submit" name="submit" value="Submit" class="button button_submit">
             </form>
             <div class="contact__info">
               <h3 class="contact__title">Contact Information</h3>
@@ -257,7 +275,13 @@
       <!-- /.container -->
     </footer>
     <!-- /.footer -->
+    <div class="overlay"></div>
+    <div class="modal">
+      <p><span id="modal__text"></span></p>
+      <button type="button" name="close" class="button button_close">OK</button>
+    </div>
   </main>
+  <script src="script.js"></script>
 </body>
 
 </html>

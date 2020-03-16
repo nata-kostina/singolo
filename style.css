@@ -57,6 +57,22 @@ header
 
   background-color: #2D303A;
   border-bottom: 6px solid #323746; 
+ 
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  transform: translate3d(0, 0, 0);
 }
 
 .header__inner {
@@ -93,6 +109,7 @@ header
   letter-spacing: -0.035em;
 
   transition: color .2s linear;
+  list-style-type: none;
 }
 
 .menu__link:after {
@@ -113,7 +130,12 @@ header
   display: none;
 }
 
-a.menu__link:hover {
+.menu__link:hover {
+  color: #C9605C;
+  cursor: pointer;
+}
+
+.link_active {
   color: #C9605C;
 }
 
@@ -122,17 +144,90 @@ slider
 =================================*/
 
 .slider {
-  background-color: #F06C64;
-  border-bottom: 5px solid #EA676B;
+  margin-top: 95px;
 }
 
 .slider__inner {    
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  height: 600px;
   padding-top: 53px;
   padding-bottom: 59px;
+}
+
+.slider_red {
+  background-color: #F06C64;
+  border-bottom: 5px solid #EA676B;
+}
+
+.slider_blue {
+  background-color: #648BF0;
+  border-bottom: 5px solid #5B7DD6;
+}
+
+.slide {
+  display: none;
+  margin: 0 auto;
+}
+
+.slide.active {
+  display: flex;
+  align-items: center;
+}
+
+.phone_1, .phone_2 {
+  position: relative;
+}
+
+.iPhone__vert {
+  margin-right: 16px;
+  position: relative;
+}
+
+.outlay__vert {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+
+  cursor: pointer;
+}
+
+.screen__vert {
+  position: absolute;
+  top: 13.4%;
+  left: 5.2%;
+  opacity: 0;
+  transition: all .2s linear;
+}
+
+.screen__vert.active, .screen__horiz.active {
+  opacity: 1;
+}
+
+.outlay__horiz {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  left: 0;
+
+  cursor: pointer;
+}
+
+.screen__horiz {
+  position: absolute;
+  top: 5.4%;
+  left: 12.3%;
+  opacity: 0;
+  transition: all .2s linear;
+}
+.phone__left {
+  margin-right: -40px;
+}
+
+.phone__right {
+  margin-left: -40px;
 }
 
 .arrow {
@@ -142,14 +237,6 @@ slider
 
 .arrow:hover {
   transform: scale(1.2);
-}
-
-.slider__inner img {
-  display: block;
-}
-
-.iPhone__vert {
-  margin-right: 16px;
 }
 
 /*===============================
@@ -225,6 +312,7 @@ portfolio
 }
 
 .tag {
+  display: inline-block;
   margin-right: 6px; 
   padding: 3px 7px;
 
@@ -240,10 +328,11 @@ portfolio
   transition: all .3s linear;
 }
 
-.tag:hover {
+.tag:hover, .tag.active {
   color: #DEDEDE;
 
   border: 1px solid #DEDEDE;
+  cursor: pointer;
 }
 
 .portfolio__items {
@@ -260,12 +349,16 @@ portfolio
   transition: all .2s linear;
 }
 
+.portfolio__img.active{
+  outline: 5px solid #F06C64;
+}
+
 .portfolio__item:nth-child(n+13) {
   display: none;
 }
 
 .portfolio__item:hover {
-  transform: scale(1.05);
+  cursor: pointer;
 }
 
 /*===============================
@@ -577,4 +670,49 @@ social
 
 .linkedin:hover {
   background-image: url(assets/img/social/linkedin_hover.svg);
+}
+
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 20;
+  transition: .3s all;
+}
+
+.modal {
+  opacity: 0;
+  visibility: hidden;
+
+  width: 100%;
+  max-width: 500px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+
+  text-align: center;
+  padding: 30px;
+  border-radius: 3px;
+  background-color: #fff;
+  transition: 0.3s all;
+}
+
+.overlay.active,
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+}
+
+.button_close {
+  margin-top: 20px;
 }

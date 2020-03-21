@@ -2,13 +2,15 @@
 Slider
 ==================================*/
 
-let items = document.querySelectorAll('.slide');
-let sliderSection = document.querySelector('.slider');
 let currentItem = 0;
+let sliderSection = document.querySelector('.slider');
+
+let slides = document.querySelectorAll('.slide');
+let slideWidth = document.querySelector('.slider__inner').offsetWidth;
 let isEnabled = true;
 
 function changeItemIndex(n) {
-  currentItem = (n + items.length) % items.length;
+  currentItem = (n + slides.length) % slides.length;
 }
 
 function changeBgColor() {
@@ -23,26 +25,47 @@ function changeBgColor() {
     }
 }
 
+function hideItem(direction) {
+  isEnabled = false;
+  slides[currentItem].classList.add(direction);
+  slides[currentItem].addEventListener('animationend', function () {
+    this.classList.remove('active', direction)
+  })
+}
+
+function showItem(direction) {
+  slides[currentItem].classList.add('next', direction);
+  slides[currentItem].addEventListener('animationend', function () {
+    this.classList.remove('next', direction);
+    this.classList.add('active');
+    isEnabled = true;
+  })
+}
+
 function showPrevItem() {
-  items[currentItem].classList.remove('active');
+  hideItem('to-right');
   changeItemIndex(currentItem - 1);
-  items[currentItem].classList.add('active');
   changeBgColor();
+  showItem('from-left');
 }
 
 function showNextItem() {
-  items[currentItem].classList.remove('active');
+  hideItem('to-left');
   changeItemIndex(currentItem + 1);
-  items[currentItem].classList.add('active');
   changeBgColor();
+  showItem('from-right');
 }
 
 document.querySelector('.arrow.arrow_left').addEventListener('click', function () {
-  showPrevItem();
+  if (isEnabled) {
+    showPrevItem(currentItem);
+  }
 });
 
 document.querySelector('.arrow.arrow_right').addEventListener('click', function () {
-  showNextItem();
+  if (isEnabled) {
+    showNextItem(currentItem);
+  }
 });
 
 /* =================================
@@ -118,15 +141,15 @@ document.querySelector('.button_submit').addEventListener('click', function () {
   let subject = document.getElementById('subject').value.trim();
   let description = document.getElementById('description').value.trim();
   if (subject.length == 0)
-    subject = "Без темы"
+    subject = "No subject"
   else
-    subject = "Тема: " + subject;
+    subject = "Subject: " + subject;
 
   if (description.length == 0)
-    description = "Без описания"
+    description = "No description"
   else
-    description = "Описание: " + description;
-  document.getElementById('modal__text').innerText = 'Письмо отправлено' + '\n\r' + subject + '\n\r' + description;
+    description = "Description: " + description;
+  document.getElementById('modal__text').innerText = 'The letter was sent' + '\n\r' + subject + '\n\r' + description;
 
   document.querySelector('.modal').classList.add('active');
   document.body.style.overflow = 'hidden';
@@ -137,16 +160,22 @@ document.querySelector('.button_close').addEventListener('click', function () {
   document.querySelector('.modal').classList.remove('active');
   document.body.style.overflow = 'visible';
   document.getElementById('modal__text').innerText = '';
+  document.querySelector('.form').reset();
 });
 
 /* =================================
 Portfolio
 ==================================*/
 
-let portItems = document.querySelectorAll('.portfolio__items>.portfolio__item');
+let portItems = document.querySelectorAll('.portfolio__item');
+
 portItems.forEach(el => el.addEventListener('click', (event) => {
-  document.querySelectorAll('.portfolio__img').forEach(e => e.classList.remove('active'));
-  event.target.classList.add('active');
+  if (event.target.classList.contains('active'))
+    event.target.classList.remove('active')
+  else {
+    document.querySelectorAll('.portfolio__img').forEach(e => e.classList.remove('active'));
+    event.target.classList.add('active');
+  }
 }
 ));
 
@@ -185,6 +214,7 @@ document.querySelectorAll('.tag').forEach(el => el.addEventListener('click', (ev
 
 let itemsNodeList = document.querySelectorAll('.portfolio__item');
 let itemsArr = Array.prototype.slice.call(itemsNodeList);
+
 function sortImg() {
   let itemsArrSorted = itemsArr.sort(() => Math.random() - 0.5);
   itemsNodeList.innerHTML = '';

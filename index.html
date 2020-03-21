@@ -35,24 +35,28 @@
     <section class="slider slider_red home">
       <div class="container">
         <div class="slider__inner">
-          <img src="assets/img/slider/arrow_left.png" alt="arrow" class="arrow arrow_left">
           <div class="slide active">
-            <div class="phone_1">
-              <img src="assets/img/slider/iPhone_vert.png" alt="iPhone" class="iPhone__vert">
-              <img src="assets/img/slider/screenBlack_vert.png" alt="iPhone" class="screen__vert">
-              <img src="assets/img/slider/base_vert.png" alt="iPhone" class="outlay__vert">
-            </div>
-            <div class="phone_2">
-              <img src="assets/img/slider/iPhone_horiz.png" alt="iPhone" class="iPhone__horiz">
-              <img src="assets/img/slider/screenBlack_horiz.png" alt="iPhone" class="screen__horiz">
-              <img src="assets/img/slider/base_horiz.png" alt="iPhone" class="outlay__horiz">
+            <div class="slide__content">
+              <div class="phone_1">
+                <img src="assets/img/slider/iPhone_vert.png" alt="iPhone" class="iPhone__vert">
+                <img src="assets/img/slider/screenBlack_vert.png" alt="iPhone" class="screen__vert">
+                <img src="assets/img/slider/base_vert.png" alt="iPhone" class="outlay__vert">
+              </div>
+              <div class="phone_2">
+                <img src="assets/img/slider/iPhone_horiz.png" alt="iPhone" class="iPhone__horiz">
+                <img src="assets/img/slider/screenBlack_horiz.png" alt="iPhone" class="screen__horiz">
+                <img src="assets/img/slider/base_horiz.png" alt="iPhone" class="outlay__horiz">
+              </div>
             </div>
           </div>
           <div class="slide">
-            <img src="assets/img/slider/phone_2.png" alt="iPhone" class="phone__left">
-            <img src="assets/img/slider/phone_1.png" alt="iPhone" class="phone__middle">
-            <img src="assets/img/slider/phone_2.png" alt="iPhone" class="phone__right">
+            <div class="slide__content">
+              <img src="assets/img/slider/phone_2.png" alt="iPhone" class="phone__left">
+              <img src="assets/img/slider/phone_1.png" alt="iPhone" class="phone__middle">
+              <img src="assets/img/slider/phone_2.png" alt="iPhone" class="phone__right">
+            </div>
           </div>
+          <img src="assets/img/slider/arrow_left.png" alt="arrow" class="arrow arrow_left">
           <img src="assets/img/slider/arrow_right.png" alt="arrow" class="arrow arrow_right">
         </div>
         <!-- /.slider__inner -->
@@ -228,7 +232,7 @@
               <input type="text" name="username" placeholder="Name (Required)" required class="input__item"><br>
               <input type="email" name="email" placeholder="Email (Required)" required class="input__item"><br>
               <input id="subject" type="text" name="subject" placeholder="Subject" class="input__item"><br>
-              <textarea id="description" name="comment" style="resize: none;"
+              <textarea id="description" name="comment" style="resize: none;" maxlength="1000"
                 placeholder="Describe your project in detail..." class="input__item textarea"></textarea><br>
               <input type="submit" name="submit" value="Submit" class="button button_submit">
             </form>
@@ -262,7 +266,7 @@
     <footer class="footer">
       <div class="container">
         <div class="footer__inner">
-          <div class="copyright">© Copyright 2013 · by PSDchat.com</div>
+          <div class="copyright">© Copyright 2013</div>
           <div class="social">
             <a href="#" class="social__icon facebook"></a>
             <a href="#" class="social__icon google"></a>

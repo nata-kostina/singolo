@@ -74,6 +74,7 @@ Header
 
 const menu = document.querySelector('.menu');
 const links = document.querySelectorAll('.menu__link');
+
 menu.addEventListener('click', function () {
   links.forEach(el => el.classList.remove('link_active'));
   event.target.classList.add('link_active');
@@ -83,10 +84,21 @@ menu.addEventListener('click', function () {
 let header = document.querySelector('.header');
 let headerHeight = document.querySelector('.header').offsetHeight;
 let scrollOffset = window.scrollY;
-checkScroll(scrollOffset);
+
+if (document.documentElement.clientWidth >= 1020) {
+  checkScroll(scrollOffset);
+}
+else
+  header.classList.add('fixed');
+
 window.addEventListener('scroll', function (e) {
   scrollOffset = window.scrollY;
-  checkScroll(scrollOffset);
+  if (document.documentElement.clientWidth >= 1020) {
+    checkScroll(scrollOffset);
+  }
+  else
+    header.classList.add('fixed');
+
   document.querySelectorAll('section').forEach((el) => {
     let topSection = el.offsetTop - headerHeight,
       bottomSection = el.offsetTop + el.offsetHeight;
@@ -190,7 +202,7 @@ document.querySelector('.outlay__vert').addEventListener('click', () => {
     document.querySelector('.screen__vert').classList.add('active')
   else
     document.querySelector('.screen__vert').classList.remove('active');
-  currentStatusVert++
+  currentStatusVert++;
 })
 
 document.querySelector('.outlay__horiz').addEventListener('click', () => {
@@ -221,3 +233,28 @@ function sortImg() {
   for (i = 0; i < itemsArrSorted.length; i++)
     document.querySelector('.portfolio__items').append(itemsArrSorted[i]);
 }
+
+/* =================================
+Burger Menu
+==================================*/
+
+document.querySelector('.burger').addEventListener('click', () => {
+  if (document.querySelector('.burger').classList.contains('burger_clicked')) {
+    document.querySelector('.nav').classList.remove('active');
+    document.querySelector('.burger').classList.remove('burger_clicked');
+    document.querySelector('.overlay').classList.remove('active');
+    document.querySelector('.logo').classList.remove('logo_left');
+  }
+  else {
+    document.querySelector('.nav').classList.add('active');
+    document.querySelector('.logo').classList.add('logo_left');
+    document.querySelector('.burger').classList.add('burger_clicked');
+    document.querySelector('.overlay').classList.add('active');
+    links.forEach(el => el.addEventListener('click', () => {
+      document.querySelector('.nav').classList.remove('active');
+      document.querySelector('.burger').classList.remove('burger_clicked');
+      document.querySelector('.overlay').classList.remove('active');
+    }));
+  }
+});
+
